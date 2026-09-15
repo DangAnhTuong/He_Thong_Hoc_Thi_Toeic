@@ -3,11 +3,11 @@
 > **Môn học**: Chuyên đề Công nghệ Thông tin  
 > **Trường**: Đại học Thủy Lợi (Cơ sở TP.HCM) -- Khoa Công nghệ Thông tin  
 > **Sinh viên thực hiện**: **Đặng Anh Tường**  
-> **Tài liệu đặc tả chi tiết**: [Bao_Cao_De_Tai_Chuyen_De_CNTT_He_Thong_Hoc_Thi_Toeic.docx](./Bao_Cao_De_Tai_Chuyen_De_CNTT_He_Thong_Hoc_Thi_Toeic.docx)
+> **Tài liệu Word hoàn chỉnh (.docx)**: [Bao_Cao_De_Tai_Chuyen_De_CNTT_He_Thong_Hoc_Thi_Toeic.docx](./Bao_Cao_De_Tai_Chuyen_De_CNTT_He_Thong_Hoc_Thi_Toeic.docx)
 
 ---
 
-## 📌 1. Giới Thiệu Tổng Quan & Tính Cấp Thiết Của Đề Tài
+## 📌 1. Giới Thiệu Tổng Quan & Tính Cấp Thiết
 
 Chứng chỉ tiếng Anh quốc tế **TOEIC (Test of English for International Communication)** hiện nay là chuẩn đầu ra ngoại ngữ bắt buộc tại các trường đại học và là tiêu chí tuyển dụng hàng đầu tại các doanh nghiệp. Tuy nhiên, người học hiện nay đối mặt với nhiều khó khăn:
 1. **Tài liệu phân mảnh**: Học từ vựng, ngữ pháp và giải đề trên các nền tảng rời rạc, không có hệ thống quản lý tiến độ tổng thể.
@@ -19,115 +19,90 @@ Chứng chỉ tiếng Anh quốc tế **TOEIC (Test of English for International
 
 ---
 
-## 🎯 2. Mục Tiêu Cần Đạt Được
+## 🔍 2. Tổng Quan Tài Liệu & Bảng So Sánh Đối Sánh (Benchmarking)
 
-- **Mục tiêu tổng quát**: Xây dựng ứng dụng Web học và thi thử TOEIC chuẩn ETS quốc tế, giao diện hiện đại, tốc độ phản hồi nhanh, cá nhân hóa lộ trình học tập.
-- **Mục tiêu cụ thể**:
-  - Thiết kế kiến trúc 3 tầng (**Client - Server - Database**) với **React 18**, **Node.js (Express)** và **MongoDB**.
-  - Xây dựng phân hệ **Nghe Chép Chính Tả (Dictation)** 3 chế độ: Điền từ khuyết, Chép cả câu (Text-diff Levenshtein), và Luyện nhại giọng (Shadowing).
-  - Xây dựng phân hệ **Luyện Đọc & Ngữ Pháp** với giải thích sư phạm 4 thành phần cho Part 5 và chế độ Đọc song ngữ Anh - Việt đối sánh.
-  - Ứng dụng thuật toán **Spaced Repetition (SuperMemo-2 / SM-2)** và tích hợp **2 Web Games Cyber Neon** (Word Blast & Word Match).
-  - Xây dựng **Phòng Thi Thử ETS 100vh No-scroll** (120 phút, 200 câu Bubble sheet, tính điểm chuẩn IIG 10 - 990).
-  - Tích hợp cổng **Thanh toán tự động VietQR** với Webhook xử lý kích hoạt tài khoản thời gian thực.
-  - Triển khai hệ thống lên **Ubuntu Linux VPS**, cấu hình **Nginx Reverse Proxy** và phân phối streaming Media tự chủ hoàn toàn.
+### 2.1. Bảng so sánh giữa Đề tài đề xuất với các hệ thống hiện hành
 
----
+| Tiêu chí kỹ thuật / Nghiệp vụ | Đồ án Web truyền thống | Hệ thống thương mại (Study4 / Prep) | Hệ thống đề tài đề xuất (Tường Tận TOEIC) |
+| :--- | :--- | :--- | :--- |
+| **Cơ chế Luyện Nghe Chép Chính Tả (Dictation)** | Không có, chỉ phát audio cả bài rồi trắc nghiệm A-B-C-D. | Có cơ bản, nhưng phát cả đoạn dài, chưa có text-diff ký tự. | **Tách từng câu thoại độc lập; 3 chế độ (Điền từ, Chép câu Text-diff Levenshtein, Shadowing AI).** |
+| **Thuật toán Ghi nhớ Từ vựng** | Học thuộc danh sách từ tĩnh (Static list). | Flashcard lật thẻ cơ bản, không có thuật toán ngắt quãng. | **Ứng dụng thuật toán Spaced Repetition (SM-2) tính ngày ôn tập + 2 Web Game Cyber Neon.** |
+| **Trải nghiệm Phòng Thi Thử TOEIC** | Giao diện cuộn dọc dài, thiếu đồng hồ áp lực. | Cuộn dọc (Infinite scroll), dễ phân tâm, không giống thi thật. | **Giao diện chuẩn IIG 100vh No-scroll, 2 cột độc lập, 200 câu Bubble sheet, đồng hồ đếm ngược 120p.** |
+| **Độ sâu Lời giải thích & Dẫn chứng** | Chỉ hiển thị đáp án đúng A/B/C/D, không giải thích. | Có lời giải thích vắn tắt, thiếu phân tích bẫy sư phạm. | **Part 5 phân tích 4 thành phần sư phạm; Part 6-7 có 'Dẫn chứng vị trí trong bài'; Đọc song ngữ đối sánh.** |
+| **Cơ chế Thanh toán & Kích hoạt VIP** | Không có hoặc thanh toán mô phỏng không kết nối ngân hàng. | Cổng VNPAY/Momo chuyển hướng, hoặc đối soát thủ công. | **Tự động sinh mã VietQR động Napas247, Webhook ngân hàng tự động kích hoạt VIP 120 ngày tức thì.** |
+| **Kiến trúc Hạ tầng & Media** | Lưu file trực tiếp trên localhost hoặc thư mục tĩnh nhỏ. | Phụ thuộc CDN bên thứ ba (AWS S3, Cloudinary), rủi ro đứt link. | **Kiến trúc Zero-Dependency Self-Hosted Media trên VPS Linux; Nginx sendfile streaming cực nhanh.** |
 
-## 🛠️ 3. Ngăn Xếp Công Nghệ (Technology Stack)
-
-```text
-               ┌─────────────────────────────────────────┐
-               │         Client (Presentation)           │
-               │  React 18 • Vite • TailwindCSS • Lucide │
-               │     Web Audio API • Web Speech API      │
-               └────────────────────┬────────────────────┘
-                                    │ HTTPS / RESTful API
-               ┌────────────────────┴────────────────────┐
-               │       Server (Application / Logic)      │
-               │    Node.js • Express • JWT • Google API │
-               │   VietQR Webhook • SM-2 Algorithm Engine│
-               └────────────────────┬────────────────────┘
-                                    │ Mongoose ODM
-               ┌────────────────────┴────────────────────┐
-               │          Database (Data Storage)        │
-               │           MongoDB Community Server      │
-               └─────────────────────────────────────────┘
-```
-
-| Thành phần | Công nghệ / Thư viện | Vai trò |
-| :--- | :--- | :--- |
-| **Frontend** | React 18, Vite 5, JavaScript ES6+ | Xây dựng Single Page Application, Virtual DOM render tối ưu. |
-| **Giao diện & Styling** | Tailwind CSS, Lucide React | Utility-first CSS, đồng nhất Dark Theme hiện đại, Responsive toàn diện. |
-| **Xử lý âm thanh** | HTML5 Web Audio API, Web Speech API | Phát audio byte-range streaming, tua mượt mà, nhận diện giọng nói. |
-| **Backend API** | Node.js, Express.js | Xử lý I/O bất đồng bộ, kiến trúc RESTful API chuẩn REST. |
-| **Cơ sở dữ liệu** | MongoDB, Mongoose ODM | Lưu trữ cấu trúc JSON linh hoạt của ngân hàng câu hỏi và dữ liệu học viên. |
-| **Xác thực** | JWT (JSON Web Token), Google OAuth 2.0 | Xác thực 1-chạm danh tính người dùng thật, loại trừ tài khoản rác. |
-| **Thanh toán tự động** | VietQR Dynamic Generator, Banking Webhook | Tự động sinh mã QR và kích hoạt gói học viên VIP thời gian thực. |
-| **Hạ tầng & Media** | Ubuntu Linux VPS, Nginx, SSL Let's Encrypt | Reverse Proxy, streaming media tự chủ với Nginx `sendfile`. |
+### 2.2. Những điểm mới và cải tiến vượt trội của đề tài (Novelty & Key Innovations)
+1. **Đột phá về luyện nghe**: Engine Dictation tách từng câu thoại độc lập + thuật toán **Levenshtein Text-diffing** chỉ ra chính xác từng ký tự gõ sai, từ bị thiếu hoặc phát âm sai.
+2. **Đột phá về ghi nhớ từ vựng**: Chu trình **Active Recall 4 bước** (Flashcard -> Trắc nghiệm -> Gõ từ -> Phát âm) kết hợp thuật toán **SuperMemo-2 (SM-2)** tự động lên lịch nhắc nhở đúng thời điểm từ vựng sắp bị quên.
+3. **Đột phá về giao diện phòng thi**: Thiết kế **100vh Single-Frame chuẩn IIG** (No-scroll), tái hiện chân thực áp lực thi thật 120 phút trên 1 khung hình 2 cột.
+4. **Đột phá về tự động hóa & hạ tầng**: Tự động hóa nạp VIP qua **VietQR Webhook**, 100% tài nguyên audio và hình ảnh được **tự host trên Linux VPS** (Zero Supabase / CDN dependency).
 
 ---
 
-## 📊 4. Bảng Đặc Tả Chi Tiết INPUT - PROCESSING - OUTPUT Của 8 Phân Hệ
+## 🗄️ 3. Kiến Trúc Dữ Liệu & Biện Luận Lựa Chọn HQTCSDL
 
-### 1. Phân hệ Xác thực & Hồ sơ Học viên (Auth & User Hub)
-* **INPUT**: Google OAuth Token từ Client popup, mục tiêu điểm số (Target Score), thời gian học dự kiến.
-* **PROCESSING**: Xác thực token qua Google API; tạo/cập nhật tài khoản trong MongoDB; sinh mã JWT Access Token; tính toán chuỗi ngày học liên tục (Streak 🔥) và cộng dồn điểm kinh nghiệm (XP ⚡).
-* **OUTPUT**: JWT Token lưu tại Client; Dashboard cá nhân hóa hiển thị huy hiệu Streak, thanh tiến độ % mục tiêu ngày, sổ tay lưu trữ câu làm sai (/mistakes).
+### 3.1. Đặc thù dữ liệu bài thi TOEIC
+Dữ liệu đề thi TOEIC mang tính chất **đa hình thái rất cao (Heterogeneous Data)**:
+- **Part 1 & 2**: Câu hỏi đơn kèm audio và ảnh chụp.
+- **Part 3 & 4**: 1 audio dài gắn liền với 1 cụm đúng 3 câu hỏi con, mỗi câu hỏi lại có 4 đáp án và giải thích riêng.
+- **Part 6 & 7**: 1 bài đọc dài (email, thông báo, bài báo) gắn liền với 2 đến 5 câu hỏi con.
+- **Từ vựng**: Chứa mảng âm thanh US/UK, ví dụ, phiên âm IPA và trạng thái tiến độ SM-2 riêng biệt của từng học viên.
 
-### 2. Phân hệ Luyện Nghe Toàn Diện (Listening: Part 1 - 4 & Dictation)
-* **INPUT**: Thao tác chọn đáp án A-D; văn bản gõ vào ô chính tả (Dictation); bản ghi âm giọng nói qua micro (Shadowing).
-* **PROCESSING**: Phân phối audio byte-range qua Nginx; kiểm tra đáp án tức thì; thuật toán Levenshtein Text-diff so sánh sai lệch từng ký tự; nhận diện giọng nói Speech-to-Text.
-* **OUTPUT**: Giao diện phòng nghe 2 cột; ảnh chụp Part 1 trên đỉnh cột trái; phản hồi Đúng/Sai màu sắc trực quan; highlight từ gõ đúng (xanh lá) / từ gõ sai hoặc thiếu (đỏ gạch chân); bảng transcript đầy đủ.
+### 3.2. So sánh lựa chọn: RDBMS (MySQL / PostgreSQL) vs NoSQL (MongoDB)
 
-### 3. Phân hệ Luyện Đọc & Ngữ Pháp (Reading: Part 5 - 7 & Song Ngữ)
-* **INPUT**: Lựa chọn đáp án trắc nghiệm A-D; thao tác bật/tắt bản dịch song ngữ Anh - Việt đối sánh.
-* **PROCESSING**: Kiểm tra đáp án; mở khóa hệ thống giải thích 4 thành phần cho Part 5 (Dịch câu, Ngữ pháp, Phân tích 4 đáp án, Mẹo bẫy ETS); trích xuất câu dẫn chứng (Evidence highlight) trong đoạn văn Part 6-7.
-* **OUTPUT**: Bảng phân tích sư phạm chi tiết tiếng Việt; văn bản song ngữ đối sánh dòng đậm/nghiêng; hộp từ vựng cốt lõi có phiên âm IPA và nghĩa.
+| Tiêu chí kỹ thuật | RDBMS (MySQL / PostgreSQL) | NoSQL Document-oriented (MongoDB) | Lựa chọn & Đánh giá |
+| :--- | :--- | :--- | :--- |
+| **Cấu trúc lưu trữ** | Bắt buộc chuẩn hóa thành 12-15 bảng, dữ liệu bị chia nhỏ. | Lưu trữ dạng **BSON/JSON lồng nhau (Embedded Documents)**. Cụm 3 câu Part 3 hay 5 câu Part 7 nằm trọn trong 1 Document. | **MongoDB vượt trội**: Không bị phân mảnh dữ liệu câu hỏi. |
+| **Hiệu năng truy vấn** | Cần thực hiện hàng chục phép `JOIN` phức tạp khi tải 1 đề thi 200 câu, gây nghẽn khi nhiều người thi đồng thời. | **Truy vấn nguyên tử (Atomic Read)** không cần JOIN. Chỉ 1 truy vấn đọc trả về trọn vẹn đề thi kèm audio và giải thích (< 15ms). | **MongoDB tối ưu tốc độ đọc**: Phù hợp cho thi thử trực tuyến. |
+| **Tính linh hoạt (Flexibility)** | Schema cố định. Thêm trường giải thích, bẫy ngữ pháp phải khóa bảng chạy `ALTER TABLE`. | **Schema-less / Dynamic Schema**. Dễ dàng bổ sung các trường dữ liệu sư phạm mới mà không ảnh hưởng hệ thống. | **MongoDB linh hoạt**: Thuận tiện phát triển tính năng mới. |
+| **Tỷ lệ Đọc / Ghi** | Tối ưu cho ghi ACID (ngân hàng, tài chính). | **Tối ưu cực tốt cho bài toán Đọc áp đảo Ghi (Read-heavy, 85:15)** trong các nền tảng giáo dục trực tuyến. | **MongoDB phù hợp bản chất ứng dụng**. |
 
-### 4. Phân hệ Từ Vựng Lặp Lại Ngắt Quãng & Gamification (SM-2 & Games)
-* **INPUT**: Tương tác lật thẻ Flashcard, chọn nghĩa trắc nghiệm, gõ từ, phát âm; đánh giá độ nhớ qua 4 nút (Học lại, Khó, Tốt, Dễ); thao tác chơi game Word Blast / Word Match.
-* **PROCESSING**: Thuật toán SuperMemo-2 (SM-2) tính toán lại Hệ số dễ (Ease Factor) và Khoảng thời gian ôn (Interval); quản lý hàng đợi từ đến hạn ôn hàng ngày; Game loop 60 FPS tính combo liên hoàn.
-* **OUTPUT**: Hàng đợi ôn tập Spaced Repetition thông minh; bộ đếm từ cần ôn hôm nay; hiệu ứng game Cyber Neon sống động; bảng xếp hạng điểm game.
-
-### 5. Phòng Thi Thử TOEIC Trực Tuyến Chuẩn Quốc Tế (ETS Mock Test 100vh)
-* **INPUT**: Lệnh bắt đầu làm bài; phiếu điền 200 câu trắc nghiệm (Bubble sheet); đồng hồ đếm ngược 120 phút.
-* **PROCESSING**: Tự động chuyển câu theo luồng đọc audio ở phần Listening; tự động lưu tạm đáp án liên tục; so khớp 200 đáp án và quy đổi điểm Listening (5-495) & Reading (5-495) theo ma trận chuẩn IIG quốc tế.
-* **OUTPUT**: Bảng điểm chuẩn ETS (Tổng điểm 10 - 990); biểu đồ radar phân tích điểm mạnh/yếu theo từng Part; danh sách chi tiết các câu đúng/sai kèm lời giải thích.
-
-### 6. Đấu Trường Trực Tuyến 1v1 & Bảng Xếp Hạng (Battle Arena & Leaderboard)
-* **INPUT**: Lệnh tham gia hàng chờ ghép trận; câu trả lời trắc nghiệm tốc độ trong khung giờ 15 giây/câu.
-* **PROCESSING**: Ghép cặp người chơi theo điểm Elo tương đương; tính điểm dựa trên độ chính xác và tốc độ; áp dụng công thức Elo quốc tế cập nhật điểm xếp hạng và chuỗi thắng.
-* **OUTPUT**: Màn hình VS đối kháng; thanh điểm số cập nhật realtime; vinh danh người chiến thắng; cập nhật Bảng xếp hạng Top học viên (Leaderboard).
-
-### 7. Hệ Thống Thanh Toán Tự Động & Kích Hoạt VIP (VietQR Webhook Engine)
-* **INPUT**: Yêu cầu nâng cấp gói VIP học tập; thông tin giao dịch chuyển khoản ngân hàng qua mã QR.
-* **PROCESSING**: Tạo đơn hàng với mã định danh duy nhất; sinh URL VietQR động theo chuẩn Napas247; đón nhận tín hiệu Webhook từ hệ thống ngân hàng; xác thực và tự động cập nhật `role = 'pro'` (120 ngày VIP).
-* **OUTPUT**: Khung thanh toán mã VietQR hiển thị trực tiếp; thông báo kích hoạt VIP thành công tức thì không cần can thiệp thủ công; mở khóa 100% ngân hàng đề thi.
-
-### 8. Phân hệ Quản Trị Hệ Thống & Báo Cáo Thống Kê (Admin Dashboard)
-* **INPUT**: Thao tác CRUD câu hỏi/đề thi; nội dung phát thông báo toàn sàn (Announcement); bộ lọc báo cáo thống kê.
-* **PROCESSING**: Kiểm tra tính toàn vẹn dữ liệu (Zero defect); lưu trữ và phát thông báo đẩy tới chuông Navbar của học viên; tổng hợp chỉ số tăng trưởng người dùng và doanh thu (Aggregation).
-* **OUTPUT**: Bảng điều khiển quản trị trực quan; biểu đồ thống kê lượt làm đề và doanh thu; chuông thông báo 🔔 trên tài khoản người học.
+👉 **Kết luận**: Đề tài chọn **MongoDB** làm Hệ quản trị CSDL chính thức, kết hợp **Mongoose ODM** ở tầng ứng dụng Node.js để quản lý schema validation chặt chẽ.
 
 ---
 
-## 📅 5. Lộ Trình Triển Khai Dự Kiến (12 Tuần)
+## 🧩 4. Phân Tích Thực Thể Chức Năng (Core Entities)
 
-* **Giai đoạn 1 (Tuần 1 - 2)**: Khảo sát thực trạng, đặc tả yêu cầu, thiết kế kiến trúc hệ thống và ca sử dụng (Use Cases).
-* **Giai đoạn 2 (Tuần 3 - 5)**: Thiết kế CSDL MongoDB, xây dựng RESTful API core (Auth, User Hub, Listening, Reading) và Wireframe UI.
-* **Giai đoạn 3 (Tuần 6 - 8)**: Lập trình phân hệ Dictation, Luyện đọc song ngữ, thuật toán Spaced Repetition SM-2 và 2 Web Games.
-* **Giai đoạn 4 (Tuần 9 - 10)**: Xây dựng phòng thi thử 100vh chuẩn ETS, tích hợp cổng thanh toán VietQR Webhook và Admin Dashboard.
-* **Giai đoạn 5 (Tuần 11 - 12)**: Kiểm toán toàn diện hệ thống (Zero defect), kiểm thử E2E, triển khai hệ thống lên Ubuntu Linux VPS với Nginx SSL.
+| Thực thể (Entity) | Các thuộc tính chính (Attributes) | Khóa chính & Quan hệ | Mục đích nghiệp vụ |
+| :--- | :--- | :--- | :--- |
+| **User** | `_id`, `googleId`, `email`, `fullName`, `avatar`, `role`, `vipExpiresAt`, `streak`, `xp`, `targetScore` | PK: `_id`. Quan hệ 1-N với `Mistakes`, `Orders`, `UserVocabProgress`. | Quản lý danh tính, phân quyền và dữ liệu cá nhân hóa. |
+| **MockTest** | `_id`, `testId`, `title`, `year`, `totalQuestions` (200), `durationMinutes` (120), `audioFullUrl` | PK: `_id`. Quan hệ 1-N với `MockTestQuestion`. | Quản lý thông tin chung của các bộ đề thi chuẩn ETS. |
+| **MockTestQuestion** | `_id`, `testId`, `part` (1-7), `questionNum`, `promptText`, `options`, `correctOption`, `audioUrl`, `imageUrl`, `explanation` | PK: `_id`. FK: `testId` tham chiếu `MockTest`. | Lưu trữ chi tiết 200 câu hỏi thi kèm media và lời giải thích. |
+| **ListeningExercise** | `_id`, `part` (1-4), `level` (1-5), `audioUrl`, `scriptText`, `questions [{ prompt, options, correctOption, explanation }]` | PK: `_id`. | Phục vụ luyện nghe theo Level (Single mode và Passage mode). |
+| **DictationSentence** | `_id`, `part`, `testId`, `sentenceIndex`, `audioUrl`, `originalSentence`, `blanks []`, `translationVi`, `difficultyLevel` | PK: `_id`. | Dữ liệu câu thoại phân tách độc lập cho phân hệ Nghe chép chính tả. |
+| **ReadingExercise** | `_id`, `part` (5-7), `level`, `passageText`, `questions []`, `pedagogicalExplanation { translation, grammar, tips }` | PK: `_id`. | Bài tập đọc hiểu và ngữ pháp kèm lời giải thích 4 thành phần. |
+| **VocabTopic** | `_id`, `topicName`, `category`, `words [{ word, ipa, meaningVi, exampleEn, audioUs, audioUk, imageUrl }]` | PK: `_id`. Quan hệ 1-N với `UserVocabProgress`. | Quản lý 83 chủ đề từ vựng và thẻ học từ. |
+| **UserVocabProgress** | `_id`, `userId`, `wordId`, `isLearned`, `easeFactor` (EF), `intervalDays` (I), `repetitionCount`, `nextReviewDate` | PK: `_id`. FK: `userId` tham chiếu `User`. | Lưu trạng thái thuật toán Spaced Repetition cho từng từ của người dùng. |
+| **Order** | `_id`, `orderCode` ('TOEICxxxxx'), `userId`, `amount`, `status`, `qrUrl`, `paidAt`, `bankTransactionId` | PK: `_id`. FK: `userId` tham chiếu `User`. | Ghi nhận giao dịch và xử lý Webhook thanh toán VietQR tự động. |
 
 ---
 
-## 📂 6. Cấu Trúc Thư Mục Tài Liệu Bàn Giao
+## 📊 5. Bảng Đặc Tả INPUT - PROCESSING - OUTPUT Của 8 Phân Hệ
 
-```text
-He_Thong_Hoc_Thi_Toeic/
-├── README.md                                                   # Bản mô tả tổng quan đề tài (Markdown)
-└── Bao_Cao_De_Tai_Chuyen_De_CNTT_He_Thong_Hoc_Thi_Toeic.docx    # File tài liệu đặc tả Word chuẩn học thuật
-```
+*(Xem chi tiết bảng I/O đầy đủ trong file Word đính kèm [Bao_Cao_De_Tai_Chuyen_De_CNTT_He_Thong_Hoc_Thi_Toeic.docx](./Bao_Cao_De_Tai_Chuyen_De_CNTT_He_Thong_Hoc_Thi_Toeic.docx))*:
+1. **Xác thực & Hồ sơ Học viên**: Google OAuth 1-chạm, chuỗi Streak 🔥, điểm XP ⚡, Sổ tay câu sai.
+2. **Luyện Nghe Toàn Diện**: Single mode Part 1-2, Passage mode Part 3-4, Nghe chép chính tả (Dictation) 3 chế độ (Điền từ, Chép câu Levenshtein Text-diff, Shadowing).
+3. **Luyện Đọc & Ngữ Pháp**: Part 5 giải thích 4 thành phần sư phạm, Part 6-7 trích dẫn dẫn chứng, Đọc song ngữ Anh - Việt đối sánh.
+4. **Từ Vựng Spaced Repetition**: Chu trình Active Recall 4 bước, thuật toán SuperMemo-2 (SM-2), 2 Web Game Cyber Neon (Word Blast & Word Match).
+5. **Phòng Thi Thử TOEIC Trực Tuyến**: 200 câu Bubble sheet, 120 phút, quy đổi điểm Listening & Reading chuẩn quốc tế 10 - 990.
+6. **Đấu Trường Trực Tuyến 1v1**: Ghép trận thời gian thực, thi đấu tốc độ 15s, tính điểm Elo quốc tế và chuỗi thắng.
+7. **Thanh Toán Tự Động VietQR**: Sinh mã QR Napas247 động, Webhook ngân hàng tự kích hoạt 120 ngày VIP.
+8. **Quản Trị Hệ Thống Admin**: CRUD câu hỏi, kiểm toán dữ liệu Zero-defect, thông báo đẩy toàn sàn tới chuông Navbar 🔔.
+
+---
+
+## 📚 6. Tài Liệu Tham Khảo (References)
+
+* `[1]` Educational Testing Service (ETS), *"TOEIC Examinee Handbook: Listening and Reading,"* Princeton, NJ, USA, 2024.
+* `[2]` P. A. Wozniak, *"Optimization of learning: A new approach to the design of repetition spacing algorithms (SuperMemo-2 / SM-2),"* Master's thesis, University of Technology in Poznan, Poland, 1990.
+* `[3]` V. I. Levenshtein, *"Binary codes capable of correcting deletions, insertions, and reversals,"* Soviet Physics Doklady, vol. 10, no. 8, pp. 707-710, 1966.
+* `[4]` H. Hermann Ebbinghaus, *"Memory: A Contribution to Experimental Psychology,"* Teachers College, Columbia University, New York, 1913.
+* `[5]` K. Chodorow, *"MongoDB: The Definitive Guide: Powerful and Scalable Data Storage,"* 3rd ed., O'Reilly Media, 2020.
+* `[6]` A. Banks and E. Porcello, *"Learning React: Modern Patterns for Developing React Apps,"* 2nd ed., O'Reilly Media, 2020.
+* `[7]` M. Cantelon, M. Harter, T. J. Holowaychuk, and N. Rajlich, *"Node.js in Action,"* Manning Publications, 2017.
+* `[8]` I. Fette and A. Melnikov, *"The WebSocket Protocol,"* RFC 6455, Internet Engineering Task Force (IETF), 2011.
+* `[9]` Các nền tảng học và thi trực tuyến tham khảo: Study4 (`https://study4.com`), Prep.vn (`https://prep.vn`), Đậu TOEIC (`https://dautoeic.com`).
 
 ---
 *© 2026 Đặng Anh Tường -- Khoa Công nghệ Thông tin, Trường Đại học Thủy Lợi.*
