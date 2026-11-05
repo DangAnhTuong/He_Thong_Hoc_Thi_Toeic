@@ -3,7 +3,9 @@
 > **Môn học**: Chuyên đề Công nghệ Thông tin  
 > **Trường**: Đại học Thủy Lợi (Cơ sở TP.HCM) -- Khoa Công nghệ Thông tin  
 > **Sinh viên thực hiện**: **Đặng Anh Tường**  
-> **Tài liệu Word hoàn chỉnh (.docx)**: [Bao_Cao_De_Tai_Chuyen_De_CNTT_He_Thong_Hoc_Thi_Toeic.docx](./Bao_Cao_De_Tai_Chuyen_De_CNTT_He_Thong_Hoc_Thi_Toeic.docx)
+> **Tài liệu Word hoàn chỉnh (.docx)**: [Bao_Cao_De_Tai_Chuyen_De_CNTT_He_Thong_Hoc_Thi_Toeic.docx](./Bao_Cao_De_Tai_Chuyen_De_CNTT_He_Thong_Hoc_Thi_Toeic.docx)  
+> **Báo cáo Thống kê & Đối soát Học liệu (.xlsx)**: [Bao_Cao_Thong_Ke_Hoc_Lieu_TOEIC_STUDY4_DauTOEIC.xlsx](./Bao_Cao_Thong_Ke_Hoc_Lieu_TOEIC_STUDY4_DauTOEIC.xlsx)  
+> **Website Vận Hành Thực Tế (Live Production)**: [https://toeic.danganhtuong.dev](https://toeic.danganhtuong.dev)
 
 ---
 
