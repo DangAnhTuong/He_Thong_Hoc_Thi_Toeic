@@ -19,6 +19,12 @@ Chứng chỉ tiếng Anh quốc tế **TOEIC (Test of English for International
 
 👉 **Đề tài đề xuất nghiên cứu và xây dựng một hệ sinh thái Web toàn diện**, tích hợp đầy đủ các phương pháp sư phạm hiện đại vào một nền tảng duy nhất, phục vụ việc ôn luyện 4 kỹ năng TOEIC từ cơ bản đến nâng cao.
 
+### 1.1. Ba Nguồn Học Liệu & Khảo Cứu Nền Tảng Cốt Lõi Của Đề Tài
+Toàn bộ ngân hàng câu hỏi (>42.000 câu), đề thi thử và kiến trúc sư phạm của đề tài được khảo cứu nghiêm túc, kế thừa có chọn lọc và đối soát chéo từ **03 nguồn nền tảng chính**:
+1. **Viện Khảo thí Giáo dục Hoa Kỳ (Educational Testing Service - ETS)**: Cơ quan sáng lập, bảo hộ bản quyền và tổ chức kỳ thi TOEIC quốc tế. Đề tài tuân thủ tuyệt đối chuẩn mực đề thi 200 câu (100 câu Listening & 100 câu Reading), thời lượng 120 phút, thang điểm 10–990 PTS, định dạng tranh ảnh Part 1 và audio chuẩn giọng 4 quốc gia bản ngữ (Mỹ, Anh, Úc, Canada) theo cẩm nang *TOEIC Examinee Handbook*.
+2. **Nền tảng Giáo dục Trực tuyến STUDY4 (`https://study4.com`)**: Nền tảng luyện thi trực tuyến quy mô hàng đầu tại Việt Nam. Đề tài khảo cứu mô hình làm bài thi thử trực tuyến, các bộ đề thi mẫu và phương pháp phân bổ thời gian; đồng thời cải tiến vượt bậc với phòng thi 100vh Single-Frame chuẩn IIG và thuật toán Levenshtein Text-diffing trong Dictation.
+3. **Nền tảng Học liệu Đậu TOEIC (`https://dauenglish.com`)**: Nền tảng học liệu chuyên sâu với kho dữ liệu đề thi đồ sộ được dịch nghĩa và giải thích chi tiết bằng tiếng Việt. Đề tài kế thừa cấu trúc phân cấp độ Level 1-5, ngân hàng giải thích bẫy đề thi và danh mục 83 chủ đề từ vựng công sở; đồng thời chuẩn hóa độc lập 100% trên hạ tầng Self-Hosted Media CDN trên VPS Linux.
+
 ---
 
 ## 🔍 2. Tổng Quan Tài Liệu & Bảng So Sánh Đối Sánh (Benchmarking)
@@ -96,15 +102,16 @@ Dữ liệu đề thi TOEIC mang tính chất **đa hình thái rất cao (Heter
 
 ## 📚 6. Tài Liệu Tham Khảo (References)
 
-* `[1]` Educational Testing Service (ETS), *"TOEIC Examinee Handbook: Listening and Reading,"* Princeton, NJ, USA, 2024.
-* `[2]` P. A. Wozniak, *"Optimization of learning: A new approach to the design of repetition spacing algorithms (SuperMemo-2 / SM-2),"* Master's thesis, University of Technology in Poznan, Poland, 1990.
-* `[3]` V. I. Levenshtein, *"Binary codes capable of correcting deletions, insertions, and reversals,"* Soviet Physics Doklady, vol. 10, no. 8, pp. 707-710, 1966.
-* `[4]` H. Hermann Ebbinghaus, *"Memory: A Contribution to Experimental Psychology,"* Teachers College, Columbia University, New York, 1913.
-* `[5]` K. Chodorow, *"MongoDB: The Definitive Guide: Powerful and Scalable Data Storage,"* 3rd ed., O'Reilly Media, 2020.
-* `[6]` A. Banks and E. Porcello, *"Learning React: Modern Patterns for Developing React Apps,"* 2nd ed., O'Reilly Media, 2020.
-* `[7]` M. Cantelon, M. Harter, T. J. Holowaychuk, and N. Rajlich, *"Node.js in Action,"* Manning Publications, 2017.
-* `[8]` I. Fette and A. Melnikov, *"The WebSocket Protocol,"* RFC 6455, Internet Engineering Task Force (IETF), 2011.
-* `[9]` Các nền tảng học và thi trực tuyến tham khảo: Study4 (`https://study4.com`), Prep.vn (`https://prep.vn`), Đậu TOEIC (`https://dautoeic.com`).
+* `[1]` **Viện Khảo thí Giáo dục Hoa Kỳ (Educational Testing Service – ETS)**, *"TOEIC Examinee Handbook: Listening and Reading,"* Princeton, NJ, USA, 2024. *(Nguồn tiêu chuẩn quốc tế về cấu trúc 7 phần thi TOEIC, quy chuẩn phòng thi và thang điểm quy đổi 10–990 PTS)*.
+* `[2]` **Nền tảng Giáo dục Trực tuyến STUDY4**, *"Hệ thống Đề thi thử TOEIC Online và Trải nghiệm khảo thí kỹ thuật số,"* `https://study4.com`, Công ty TNHH Công nghệ A PLUS, Hà Nội, 2024. *(Nguồn tham khảo mô hình thi thử trực tuyến và ngân hàng đề thi đối chiếu chuẩn hóa)*.
+* `[3]` **Nền tảng Học liệu Đậu TOEIC**, *"Hệ thống Học liệu TOEIC phân cấp Level, Giải thích chi tiết và Ngân hàng từ vựng chuyên ngành,"* `https://dauenglish.com`, 2024. *(Nguồn tham khảo phương pháp phân cấp độ bài học theo Level, giải thích chi tiết đáp án tiếng Việt và cấu trúc dữ liệu câu hỏi)*.
+* `[4]` **P. A. Wozniak**, *"Optimization of learning: A new approach to the design of repetition spacing algorithms (SuperMemo-2 / SM-2),"* Master's thesis, University of Technology in Poznan, Poland, 1990.
+* `[5]` **V. I. Levenshtein**, *"Binary codes capable of correcting deletions, insertions, and reversals,"* Soviet Physics Doklady, vol. 10, no. 8, pp. 707-710, 1966.
+* `[6]` **H. Hermann Ebbinghaus**, *"Memory: A Contribution to Experimental Psychology,"* Teachers College, Columbia University, New York, 1913.
+* `[7]` **K. Chodorow**, *"MongoDB: The Definitive Guide: Powerful and Scalable Data Storage,"* 3rd ed., O'Reilly Media, 2020.
+* `[8]` **A. Banks and E. Porcello**, *"Learning React: Modern Patterns for Developing React Apps,"* 2nd ed., O'Reilly Media, 2020.
+* `[9]` **M. Cantelon, M. Harter, T. J. Holowaychuk, and N. Rajlich**, *"Node.js in Action,"* Manning Publications, 2017.
+* `[10]` **I. Fette and A. Melnikov**, *"The WebSocket Protocol,"* RFC 6455, Internet Engineering Task Force (IETF), 2011.
 
 ---
 *© 2026 Đặng Anh Tường -- Khoa Công nghệ Thông tin, Trường Đại học Thủy Lợi.*
