@@ -1389,11 +1389,13 @@ export default function MockTestRoom() {
                         <div className="text-sm sm:text-base font-semibold dark:text-white text-slate-900 leading-snug">
                           <span className="font-mono text-sky-600 dark:text-sky-400 font-bold">{q.questionNum}. </span>
                           {q.part === 1 ? (
-                            <span className="dark:text-slate-200 text-slate-800">Chọn một câu miêu tả đúng nhất những gì bạn nhìn thấy trong bức tranh.</span>
+                            (isAnswered || isReviewMode) && cleanPrompt && !/Chọn một câu miêu tả/i.test(cleanPrompt) && !/^Select the one statement/i.test(cleanPrompt) && !/^Câu\s*\d+$/i.test(cleanPrompt) ? (
+                              <span className="dark:text-slate-200 text-slate-800">{cleanPrompt}</span>
+                            ) : null
                           ) : q.part === 2 ? (
-                            <span className="dark:text-slate-200 text-slate-800">
-                              {isAnswered || isReviewMode ? cleanPrompt : 'Nghe câu hỏi và chọn câu trả lời thích hợp nhất.'}
-                            </span>
+                            (isAnswered || isReviewMode) && cleanPrompt && !/Nghe câu hỏi và chọn/i.test(cleanPrompt) && !/^Select the best response/i.test(cleanPrompt) ? (
+                              <span className="dark:text-slate-200 text-slate-800">{cleanPrompt}</span>
+                            ) : null
                           ) : (
                             cleanPrompt && <span className="dark:text-slate-200 text-slate-800">{cleanPrompt}</span>
                           )}

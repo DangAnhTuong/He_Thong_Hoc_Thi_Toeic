@@ -1505,29 +1505,30 @@ export default function LevelPracticeRoom() {
                   
                   {/* Question Header & Prompt */}
                   <div className="flex items-start justify-between border-b dark:border-slate-800/80 border-slate-200 pb-3 gap-3">
-                    <div className="flex items-start gap-2.5 flex-1">
-                      <span className="font-heading font-black text-lg text-cyan-600 dark:text-cyan-400 shrink-0">
-                        {isPassageMode ? `${qItem.testQuestionNumber || (qGlobalIdx + 1)}.` : `Câu ${qGlobalIdx + 1}.`}
-                      </span>
-                      <div className="space-y-1">
-                        <span className="text-sm sm:text-base font-semibold dark:text-slate-100 text-slate-900 leading-snug block">
-                          {partNum === 1 
-                            ? 'Chọn một câu miêu tả đúng nhất những gì bạn nhìn thấy trong bức tranh.'
-                            : (partNum === 2 
-                                ? (isThisQAnswered ? qItem.promptText : 'Nghe câu hỏi và chọn câu trả lời thích hợp nhất.')
-                                : qItem.promptText)
-                          }
+                    <div className="flex-1">
+                      <div className="text-base sm:text-lg font-bold dark:text-slate-100 text-slate-900 leading-snug flex items-start gap-2">
+                        <span className="font-heading font-black text-cyan-600 dark:text-cyan-400 shrink-0">
+                          {isPassageMode ? `${qItem.testQuestionNumber || (qGlobalIdx + 1)}.` : `${qGlobalIdx + 1}.`}
                         </span>
-                        {/* Vietnamese Translation of Question Prompt (Chỉ hiển thị khi đã làm câu hỏi VÀ bật Song ngữ VÀ là tiếng Việt thực sự) */}
-                        {isThisQAnswered && isSongNgu && qItem.promptTranslation && 
-                          qItem.promptTranslation.trim().toLowerCase() !== (qItem.promptText || '').trim().toLowerCase() &&
-                          !/mymemory/i.test(qItem.promptTranslation) &&
-                          !/^(Nữ|Nam|Người nói|Người phụ nữ|Người đàn ông|W|M|W-[a-zA-Z]+|M-[a-zA-Z]+|Man|Woman|Narrator|Speaker)\s*:/iu.test(qItem.promptTranslation) && (
-                          <div className="text-xs sm:text-sm text-sky-600 dark:text-sky-300/90 font-medium italic border-l-2 border-cyan-400/80 pl-2.5 mt-1">
-                            {qItem.promptTranslation}
-                          </div>
+                        {((partNum === 2) ? isThisQAnswered : (partNum !== 1)) && qItem.promptText && 
+                         !/Chọn một câu miêu tả/i.test(qItem.promptText) && 
+                         !/Nghe câu hỏi và chọn/i.test(qItem.promptText) && 
+                         !/^Select the (one statement|best response)/i.test(qItem.promptText) && 
+                         !/^Câu\s*\d+$/i.test(qItem.promptText.trim()) && (
+                          <span className="font-semibold dark:text-slate-100 text-slate-900">
+                            {qItem.promptText}
+                          </span>
                         )}
                       </div>
+                      {/* Vietnamese Translation of Question Prompt (Chỉ hiển thị khi đã làm câu hỏi VÀ bật Song ngữ VÀ là tiếng Việt thực sự, KHÔNG hiển thị cho Part 1) */}
+                      {isThisQAnswered && isSongNgu && partNum !== 1 && qItem.promptTranslation && 
+                        qItem.promptTranslation.trim().toLowerCase() !== (qItem.promptText || '').trim().toLowerCase() &&
+                        !/mymemory/i.test(qItem.promptTranslation) &&
+                        !/^(Nữ|Nam|Người nói|Người phụ nữ|Người đàn ông|W|M|W-[a-zA-Z]+|M-[a-zA-Z]+|Man|Woman|Narrator|Speaker)\s*:/iu.test(qItem.promptTranslation) && (
+                        <div className="text-xs sm:text-sm text-sky-600 dark:text-sky-300/90 font-medium italic border-l-2 border-cyan-400/80 pl-2.5 mt-1.5">
+                          {qItem.promptTranslation}
+                        </div>
+                      )}
                     </div>
 
                     <button
@@ -1580,18 +1581,14 @@ export default function LevelPracticeRoom() {
                         >
                           <div className="flex items-center justify-between gap-3 w-full">
                             <div className="flex items-center gap-3 flex-1">
-                              <span className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs shrink-0 ${bubbleStyles}`}>
-                                {cleanOptLabel}
+                              <span className="font-semibold font-mono text-sm sm:text-base dark:text-slate-300 text-slate-700 shrink-0">
+                                ({cleanOptLabel})
                               </span>
                               
                               {/* Option text: ONLY visible in Part 3/4 passage mode OR after user has chosen an answer! */}
-                              {showOptionText ? (
+                              {showOptionText && opt.text && (
                                 <span className="text-sm sm:text-base font-medium dark:text-slate-100 text-slate-800 leading-snug">
                                   {opt.text}
-                                </span>
-                              ) : (
-                                <span className="text-sm font-semibold dark:text-slate-300 text-slate-700 font-mono">
-                                  ({cleanOptLabel})
                                 </span>
                               )}
                             </div>
