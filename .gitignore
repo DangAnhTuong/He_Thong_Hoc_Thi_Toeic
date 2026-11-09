@@ -15,6 +15,9 @@ frontend/.env.*
 dist/
 build/
 frontend/dist/
+frontend/android/app/build/
+frontend/android/.gradle/
+*.apk
 dist_bundle.tar.gz
 
 # Deploy packages & Large ZIP / Archive files

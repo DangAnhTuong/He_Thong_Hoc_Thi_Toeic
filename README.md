@@ -3,8 +3,8 @@
 > **Môn học**: Chuyên đề Công nghệ Thông tin  
 > **Trường**: Đại học Thủy Lợi (Cơ sở TP.HCM) -- Khoa Công nghệ Thông tin  
 > **Sinh viên thực hiện**: **Đặng Anh Tường**  
-> **Tài liệu Word hoàn chỉnh (.docx)**: [Bao_Cao_De_Tai_Chuyen_De_CNTT_He_Thong_Hoc_Thi_Toeic.docx](./Bao_Cao_De_Tai_Chuyen_De_CNTT_He_Thong_Hoc_Thi_Toeic.docx)  
-> **Slide Thuyết trình PowerPoint (.pptx)**: [Bao_Cao_Thuyet_Trinh_He_Thong_Hoc_Thi_Toeic.pptx](./Bao_Cao_Thuyet_Trinh_He_Thong_Hoc_Thi_Toeic.pptx)  
+> **Tài liệu Word hoàn chỉnh (.docx)**: [S26-K65CNTT_2351067119_DangAnhTuong_CDCNTT.docx](./S26-K65CNTT_2351067119_DangAnhTuong_CDCNTT.docx)  
+> **Slide Thuyết trình PowerPoint (.pptx)**: [S26-K65CNTT_2351067119_DangAnhTuong_Bao_Cao_Chuyen_De.pptx](./S26-K65CNTT_2351067119_DangAnhTuong_Bao_Cao_Chuyen_De.pptx)  
 > **Báo cáo Thống kê & Đối soát Học liệu (.xlsx)**: [Bao_Cao_Thong_Ke_Hoc_Lieu_TOEIC_STUDY4_DauTOEIC.xlsx](./Bao_Cao_Thong_Ke_Hoc_Lieu_TOEIC_STUDY4_DauTOEIC.xlsx)  
 > **Website Vận Hành Thực Tế (Live Production)**: [https://toeic.danganhtuong.dev](https://toeic.danganhtuong.dev)
 
